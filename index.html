@@ -66,7 +66,46 @@
         <button type="button" onclick="show('가입하기')" class="btn btn-danger">Sign In</button>
     </div>
 
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" >
+                    <img class="card-img-top" id="item1_img" src="./img/img_dress1.jpg/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="item1_title">Card title</h5>
+                        <p class="card-text" id="item1_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" id="item2_img" src="./img/img_dress2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="item2_title">Card title</h5>
+                        <p class="card-text" id="item2_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" id="item3_img" src="./img/img_dress3.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="item3_title">Card title</h5>
+                        <p class="card-text" id="item3_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     <script>
+        
         function show(a) {
             document.getElementById('modal').style.display='block';    
             document.getElementById('text').innerHTML = a;
@@ -75,7 +114,6 @@
         document.getElementById("btn_close").addEventListener("click", function() {        
             document.getElementById("modal").style.display = "none";
         });
-
         /*
             만약에 폼안의 값이 공백일 경우에 폼 전송 막기
             + 경고창 띄우기
@@ -90,8 +128,6 @@
                 return true;
             }
         }
-
-
     </script>
 
     <!-- Optional JavaScript -->
@@ -99,5 +135,46 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        var products = [
+        { 
+                id: 1,
+                price: 299,
+                img: 'img/pic1.jpg',
+                title: 'Blossom Dress',
+                text: "Do you like some random yellow stuff? Here's one for you."
+        }, 
+        { 
+                id: 2,
+                price: 199,
+                img: 'img/pic2.jpg',
+                title: 'Springfield Shirt',
+                text: "Stole it from my dad."
+        }, 
+        { 
+                id: 3,
+                price: 399,
+                img: 'img/pic3.jpg',
+                title: 'Black Monastery',
+                text: "The best beer comes from the monastery."
+        }];
+
+        document.getElementById('item1_img').src = products[0].img;
+        document.getElementById('item1_title').innerHTML = products[0].title;
+        document.getElementById('item1_text').innerHTML = products[0].text;
+
+        document.getElementById('item2_img').src = products[1].img;
+        document.getElementById('item2_title').innerHTML = products[1].title;
+        document.getElementById('item2_text').innerHTML = products[1].text;
+
+        document.getElementById('item3_img').src = products[2].img;
+        document.getElementById('item3_title').innerHTML = products[2].title;
+        document.getElementById('item3_text').innerHTML = products[2].text;
+
+
+    </script>
+
+
     </body>
 </html>
