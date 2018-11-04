@@ -1,8 +1,8 @@
 .main-background {
     background-image: url(img/cover.jpg);
     background-size: cover;
- }
- 
+}
+
 .black-background {
     background-color: rgba(0,0,0,0.5);
     width: 100%;
@@ -10,8 +10,8 @@
     position: fixed;
     z-index: 5;
     display: none;
- }
- 
+}
+
 .white-background {
     background-color: white;
     width: 80%;
@@ -19,4 +19,4 @@
     margin: 100px auto;
     padding: 30px;
     border-radius: 5px;
- }
+}
