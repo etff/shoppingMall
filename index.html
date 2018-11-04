@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card" >
-                    <img class="card-img-top" id="item1_img" src="./img/img_dress1.jpg/" alt="Card image cap">
+                    <img class="card-img-top" id="item1_img" src="./img/pic1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" id="item1_title">Card title</h5>
                         <p class="card-text" id="item1_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" id="item2_img" src="./img/img_dress2.jpg" alt="Card image cap">
+                    <img class="card-img-top" id="item2_img" src="./img/pic2.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" id="item2_title">Card title</h5>
                         <p class="card-text" id="item2_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -92,7 +92,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top" id="item3_img" src="./img/img_dress3.jpg" alt="Card image cap">
+                    <img class="card-img-top" id="item3_img" src="./img/pic3.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" id="item3_title">Card title</h5>
                         <p class="card-text" id="item3_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -114,6 +114,17 @@
         document.getElementById("btn_close").addEventListener("click", function() {        
             document.getElementById("modal").style.display = "none";
         });
+
+        // 배경눌러 닫기
+        document.getElementById("modal").addEventListener("click", function(e) {        
+
+            // 지금 진짜 클릭한 곳이 검은 배경일 경우에만 모달창을 닫기
+            if (e.target === document.getElementById("modal")){
+                document.getElementById("modal").style.display = "none";
+            }
+        });
+
+
         /*
             만약에 폼안의 값이 공백일 경우에 폼 전송 막기
             + 경고창 띄우기
@@ -128,6 +139,9 @@
                 return true;
             }
         }
+
+
+
     </script>
 
     <!-- Optional JavaScript -->
@@ -160,6 +174,15 @@
                 text: "The best beer comes from the monastery."
         }];
 
+        //TODO
+        // 버튼을 누르면 가격순으로 정렬됨.
+
+        products.sort(function(a,b) {
+            return a.price - b.price;
+        });
+        
+        console.log(products);
+        
         document.getElementById('item1_img').src = products[0].img;
         document.getElementById('item1_title').innerHTML = products[0].title;
         document.getElementById('item1_text').innerHTML = products[0].text;
@@ -171,6 +194,11 @@
         document.getElementById('item3_img').src = products[2].img;
         document.getElementById('item3_title').innerHTML = products[2].title;
         document.getElementById('item3_text').innerHTML = products[2].text;
+
+        var productCnt = products.length;
+        console.log(productCnt);
+
+        
 
 
     </script>
