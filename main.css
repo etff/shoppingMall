@@ -20,3 +20,38 @@
     padding: 30px;
     border-radius: 5px;
 }
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-button {
+    display: block;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+}
+
+.active {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #ccc;
+    color: black;
+    margin-top: -2px;
+    border-top: 2px solid orange;
+}
+
+.tab-content {
+    padding: 10px;
+    display: none;
+}
+
+.show-tab {
+    display: block;
+}
