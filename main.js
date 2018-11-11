@@ -1,4 +1,3 @@
-
 // 버튼 0을 누르면, 버튼 0,1,2에 있던 active 클래스가 사라지고
 // 버튼 0에 active 클래스가 붙음.active
 
@@ -30,9 +29,24 @@ document.querySelector('.list').addEventListener('click', function(e) {
 	/*
 	*	버튼 0을 눌렀을 경우, 버튼 보이기(0), 탭보이기(0)을 실행
 		버튼 0을 눌렀을 경우, 버튼 보이기(1), 탭보이기(1)을 실행
-		버튼 0을 눌렀을 경우, 버튼 보이기(2), 탭보디기(2)을 실행
+		버튼 0을 눌렀을 경우, 버튼 보이기(2), 탭보이기(2)을 실행
 	*/
 	
 	showButtons(e.target.dataset.id);
 	showTabs(e.target.dataset.id);
 });
+
+$(function() {
+	
+	$("#add").on("click", function() {
+		var data = {
+			num : document.getElementById('quantity').value,
+			size : document.getElementById('size').value,
+			color : document.getElementById('color').value,
+			name : 'Blossom Dress'
+		}
+		
+		data = JSON.stringify(data);
+		localStorage.setItem('product1', data);
+	});
+})
