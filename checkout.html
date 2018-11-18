@@ -87,24 +87,42 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var data = localStorage.getItem('product1');
-        data = JSON.parse(data);
+
+        function SampleData(id,name,price,quantity,size) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+            this.size = size;
+            localStorage.setItem('product'+this.id, JSON.stringify(this));
+            console.log('product'+this.id+' saved');
+        }
         
+        var data = new SampleData(1,'Blossom',199,2,'Small');
+        var data2 = new SampleData(2,'Blue Shirt',99,1,'Large');
+        var data3 = new SampleData(3,'Black Dress',159,1,'Medium');
+        var data4 = new SampleData(4,'Red Dress',59,1,'Medium');
+
+    for (var i = 0; i < 3; i++) {
+        var data = localStorage.getItem("product" + (i+1));
+        data  = JSON.parse(data);
+
         var name = data.name,
-            num = data.num,
-            color = data.color;
+            quantity = data.quantity,
+            size = data.size;
         
         var template = `
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">${i+1}</th>
             <td>${name}</td>
-            <td>${num}개</td>
-            <td>${color}</td>
-        </tr>`;    
-
+            <td>${quantity}개</td>
+            <td>${size}</td>
+        </tr>`;     
 
         $("tbody").append(template);
 
+    }
+    
     </script>
 
 </body>
