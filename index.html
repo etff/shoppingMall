@@ -179,10 +179,24 @@
         window.onload = function () {
             for(var i = 0; i < products.length; i++) {
                 document.getElementById("item_title" + i).innerHTML = products[i].title;
-                document.getElementById("item_img"+i).src = products[i].img;
-                document.getElementById("item_text" + i).innerHTML = products[i].text;
+                document.getElementById("item_img"   + i).src = products[i].img;
+                document.getElementById("item_text"  + i).innerHTML = products[i].text;
             }
         }
+
+        $.ajax({
+	        type : 'GET',
+	        url : '/data.json',
+	        success : function (result) {
+	        
+                    if (result) {
+                        alert(result); 
+                    } else {
+                        alert("데이터를 수신하지 못했습니다");
+                    }             
+                }
+            });
+
 
     </script>
 

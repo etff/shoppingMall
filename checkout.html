@@ -142,6 +142,16 @@
             num = parseInt(num) + 1;
             $(this).siblings("span").text(num);
         });
+
+        $(".minus").on("click", function() {
+            var num = $(this).siblings("span").text();
+            if(num > 0) {
+                num = parseInt(num) - 1;
+            } else {
+                alert("정수만 입력가능합니다")
+            }
+            $(this).siblings("span").text(num);
+        });
     });
 
     </script>
