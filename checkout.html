@@ -67,7 +67,17 @@
             </tr>
         </thead>
         <tbody>
-            
+                <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>
+                        
+                            <button class="btn">+</button>
+                            <span>10</span>
+                            <button class="btn">-</button>
+                        </td>
+                        <td>${size}</td>
+                    </tr>`; 
         </tbody>
     </table>
 
@@ -115,14 +125,25 @@
         <tr>
             <th scope="row">${i+1}</th>
             <td>${name}</td>
-            <td>${quantity}개</td>
+            <td>
+                <button class="btn plus">+</button>
+                    <span>${quantity}</span>
+                <button class="btn minus">-</button>
+            </td>
             <td>${size}</td>
         </tr>`;     
 
         $("tbody").append(template);
-
     }
-    
+
+    $(function() {
+        $(".plus").on("click", function() {
+            var num = $(this).siblings("span").text();
+            num = parseInt(num) + 1;
+            $(this).siblings("span").text(num);
+        });
+    });
+
     </script>
 
 </body>
