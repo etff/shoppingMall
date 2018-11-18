@@ -102,6 +102,8 @@
             </div>
         </div>
     </div>
+
+    <button class="btn btn-danger" id="more">더보기</button>
     
 
     <script>
@@ -184,18 +186,33 @@
             }
         }
 
-        $.ajax({
-	        type : 'GET',
-	        url : '/data.json',
-	        success : function (result) {
-	        
-                    if (result) {
-                        alert(result); 
-                    } else {
-                        alert("데이터를 수신하지 못했습니다");
-                    }             
+        $("#more").on("click", function() {
+            
+            $.ajax({
+                type : 'GET',
+                url : '/data.json',
+                    
+                success : function (result) {
+            
+                    $.each( result, function( i, item ) {
+                        
+                        var template = `
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top" id="item_img1" src="./img/pic2.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="item_title1">${item.title}</h5>
+                                        <p class="card-text" id="item_text1">${item.text}</p>
+                                        <a href="#" class="btn btn-primary">Details</a>
+                                    </div>
+                                </div>
+                            </div> `;
+                        $(".row").append(template);
+                    });                    
                 }
             });
+        });
+
 
 
     </script>
